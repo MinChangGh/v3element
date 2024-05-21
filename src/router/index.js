@@ -7,7 +7,7 @@ const routes = [
     ...pubRouter
   ];
 
-  console.log(routes)
+
 
   const router = createRouter({
     history: createWebHashHistory(),

@@ -4,15 +4,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 
 import { ref } from 'vue'
-setup() {
-    const msg = ref('404 没找到页面')
-    return {
-        msg
-    }
-}
+const msg = ref('404 没找到页面')
+
 
 
 </script>
