@@ -2,7 +2,7 @@
   <el-table
     :span-method="arraySpanMethod"
     :data="tableData"
-    style="width: 100%"
+    style="width: 60%"
     border
   >
     <el-table-column prop="date" label="Date" width="180" />
@@ -36,28 +36,14 @@ const tableData = [
 ];
 
 const arraySpanMethod = (row, column, rowIndex, columnIndex) => {
-    if (rowIndex === 0 && columnIndex === 0) {
-            return  {
-                rowspan: 1,
-                colspan: 2
-            }
-        } else if (rowIndex === 0 && columnIndex === 1) {
-            return  {
-                rowspan: 0,
-                colspan: 0
-            }
+    console.log( rowIndex, columnIndex)
+    if (rowIndex % 2 === 0) {
+        if (columnIndex === 0) {
+            return [1, 2]
+        } else if (columnIndex === 1) {
+            return [0, 0]
         }
-        if (rowIndex === 2 && columnIndex === 0) {
-            return {
-                rowspan: 2,
-                colspan: 1
-            };
-        } else if (rowIndex === 3 && columnIndex === 0) {
-            return {
-                rowspan: 0,
-                colspan: 0
-            };
-        }
+    }
 
 
 };
